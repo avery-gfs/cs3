@@ -14,3 +14,5 @@ permanently.
 
 You can write a maze solver using recursion or without using it, but you'll
 probably find that the recursive solutions is more elegant!
+
+![maze animation](maze.gif)
