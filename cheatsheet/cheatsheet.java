@@ -283,13 +283,6 @@ switch (fileExtension) {
     System.out.println("File type unknown");
 }
 
-String arrow = switch (heading) {
-  case NORTH: yield "↑"; // Get a value from `switch` with `yield`
-  case SOUTH: yield "↓";
-  case EAST:  yield "→";
-  case WEST:  yield "←";
-}; // Need semicolon when assigning `switch` result to a variable
-
 // ---- Methods ---------------------------------------------------
 
 static void greet(String name) { // No return value
@@ -308,51 +301,7 @@ static double abs(double n) { // Returns a double
   return n;
 }
 
-// ---- Overloads -------------------------------------------------
-
-// A method can have multiple variants (overloads) that take
-// different arguments
-
-static int maximum(int a, int b) {
-  // ...
-}
-
-static int maximum(int[] numbers) {
-  // ...
-}
-
-// ---- Varargs ---------------------------------------------------
-
-// Use `...` to allow a flexible number of arguments (varargs)
-static void helloAll(String... names) {
-  // names is a String[]
-  System.out.println("Hello " + String.join(" and ", names));
-}
-
-helloAll("Alice");        // Prints "Hello Alice"
-helloAll("Alice", "Bob"); // Prints "Hello Alice and Bob"
-
-String[] names = { "Alice", "Bob" };
-// You can also pass an Array as varargs
-helloAll(people); // Prints "Hello Alice and Bob"
-
-// ---- Generics --------------------------------------------------
-
-// Returns the second value in a list containing any
-static <T> T get2nd(List<T> values) {
-  return values.get(1);
-}
-
-get2nd(List.of(0, 1))     // 1
-get2nd(List.of("a", "b")) // "b"
-
 // ---- Classes ---------------------------------------------------
-
-// Constructor methods make an object from scratch
-// Factory
-// Transformer methods make an object from an old object
-// Mutator methods update and object
-// Observer methods read or calculate data from an object
 
 class Rectangle {
   double length; // Instance field
@@ -360,41 +309,69 @@ class Rectangle {
 
   static final int SIDES = 4; // Static constant
 
-  Rectangle(double length, double width) { // Constructor method
+  // Constructor method
+  Rectangle(double length, double width) {
     this.length = length;
     this.width = width;
   }
 
-  static Rectangle UnitSquare() { // Factory method
+  // Factory method
+  static Rectangle UnitSquare() {
     return new Rectangle(1, 1);
   }
 
-  void scale(double factor) { // Mutator method
+  // Mutator method
+  void scale(double factor) {
     length *= factor;
     width *= factor;
   }
 
-  Rectangle rotated() { // Transformer method
+  // Transformer method
+  Rectangle rotated() {
     return new Rectangle(width, length);
   }
 
-  double area() { // Observer method
+  // Observer method
+  double area() {
     return length * width;
   }
 
   // You can define custom `toString`, `equals`, and `hashCode`
   // methods to change how a class is displayed, compared, and
   // hashed, but it's often easier to just use a record class
-  // 
+  //
   // See also: Objects.equals, Objects.hash
 }
 
 Rectangle rect = new Rectangle(4, 5);
-rect.area()     // 20.0
-rect.SIDES      // 4
-Rectangle.SIDES // 4
+rect.length // 4.0
+rect.width  // 5.0
+rect.area()  // 20.0
 
 Rectangle unit = Rectangle.UnitSquare(); // Static method call
+rect.length // 1.0
+rect.width  // 1.0
+unit.area() // 1.0
+
+Rectangle.SIDES // 4
+
+// ---- Records ---------------------------------------------------
+
+// Records are immutable classes with auto-generated constructor,
+// `toString`, `equals`, `hashCode`, and getter methods
+
+record Point(double x, double y) {
+  public double distanceTo(Point other) {
+    double dx = x - other.x;
+    double dy = y - other.y;
+    return Math.sqrt(dx * dx + dy * dy);
+  }
+}
+
+Point p = new Point(0, 3);
+// Use method syntax `x()` and `y()` to access fields
+p.x() // 3.0
+p.distanceTo(new Point(4, 0)) // 5.0
 
 // ---- Interfaces ------------------------------------------------
 
@@ -405,7 +382,9 @@ interface Shape {
 class Circle implements Shape {
   double radius;
 
-  Circle(double radius) { this.radius = radius; }
+  Circle(double radius) {
+    this.radius = radius;
+  }
 
   public double area() {
     return Math.PI * radius * radius;
@@ -429,37 +408,27 @@ class Rectangle implements Shape {
 // Different objects can implement same interface (polymorphism)
 List<Shape> shapes = List.of(new Circle(10), new Rectangle(4, 5));
 
-// ---- Records ---------------------------------------------------
+// ---- Generics --------------------------------------------------
 
-// Records are immutable classes with auto-generated constructor,
-// `toString`, `equals`, `hashCode`, and getter methods
+// Get a random value from a generic list of any type
+static <T> T getRandom(List<T> values) {
+  var index = new Random().nextInt(values.size());
+  return values.get(index);
+}
 
-record Point(double x, double y) {
-  public double distanceTo(Point other) {
-    double dx = x - other.x;
-    double dy = y - other.y;
-    return Math.sqrt(dx * dx + dy * dy);
+getRandom(List.of(0, 1)) // 0 or 1
+getRandom(List.of("a", "b")); // "a" or "b"
+
+// Class that holds two values of any type
+class Pair<A, B> {
+  A a;
+  B b;
+
+  Pair(A a, B b) {
+    this.a = a;
+    this.b = b;
   }
 }
 
-Point p = new Point(0, 3);
-// `x` and `y` are private, use `x()` and `y()` to access fields
-p.x() // 3.0
-p.distanceTo(new Point(4, 0)) // 5.0
-
-// ---- Lambdas ---------------------------------------------------
-
-Map<String, Integer> scores = new HashMap<>();
-scores.put("BAL", 20); // scores = {BAL=20}
-
-// We can use lambdas to update objects
-scores.compute("BAL", (k, v) -> v + 27); // scores = {BAL=27}
-
-// ---- Streams ---------------------------------------------------
-
-List<Integer> numbers = List.of(1, 2, 3, 4, 5);
-
-// We can use Streams to transform sequences
-List<Integer> squares = numbers.stream()
-  .map(n -> n * n)
-  .collect(Collectors.toList()); // [1, 4, 9, 16, 25]
+var point = new Pair(1, 2);
+var player = new Pair("Lamar Jackson", 8);
