@@ -3,7 +3,7 @@ import java.util.*;
 // Given a "maze" string, where A is the start, B is the end, and █ is
 // a wall, find a path from A to B and mark the path with ▒ characters.
 
-class Maze {
+class Main {
   public static void main(String[] args) {
     var maze = """
     █████████████████████████████████
