@@ -30,7 +30,7 @@ class Main {
   // containing each possible binary string of length len.
   //
   // A binary string is a string that contains a sequence of bits
-  // (binary digits), which are either 0 or 1.
+  // (binary digits), which are each either 0 or 1.
   //
   // There are 2^n possible binary strings of length n.
   //
