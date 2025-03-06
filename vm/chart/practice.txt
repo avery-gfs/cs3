@@ -1,0 +1,1 @@
+-- display the five numbers in memory as a bar chart

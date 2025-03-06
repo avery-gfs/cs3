@@ -3,7 +3,7 @@ import java.nio.file.*;
 
 class Main {
     public static void main(String[] args) throws Exception {
-        new VM().run("programs/factorial.txt");
+        new VM().run("factorial/solution.txt");
     }
 }
 
@@ -65,8 +65,8 @@ class VM {
         for (var line : lines) {
             line = line.trim();
 
-            // Ignore empty source lines
-            if (!line.isEmpty()) {
+            // Ignore empty source lines and comment lines
+            if (!line.isEmpty() && !line.startsWith("--")) {
                 instrs.add(line);
             }
         }
