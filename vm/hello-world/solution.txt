@@ -1,0 +1,9 @@
+-- display a null-terminated string stored in memory
+
+init 72 101 108 108 111 32 119 111 114 108 100 33 0
+load r1 r0
+jeq 4 r1 0
+print r1
+add r0 1
+jmp -4
+halt
