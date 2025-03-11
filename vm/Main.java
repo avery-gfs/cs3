@@ -3,7 +3,7 @@ import java.nio.file.*;
 
 class Main {
     public static void main(String[] args) throws Exception {
-        new VM().run("insertion-sort/practice.txt");
+        new VM().run("selection-sort/practice.txt");
     }
 }
 
@@ -54,7 +54,7 @@ class VM {
             logOutput();
 
             // Pause to visualize execution
-            Thread.sleep(100);
+            Thread.sleep(10);
         }
     }
 

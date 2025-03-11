@@ -54,5 +54,5 @@ print n    (print n as a character in the current line)
 MEMORY:
 
 load dest index    (load memory location index into dest)
-store index src    (store src in memory location index)
+store src index    (store src in memory location index)
 init n0 n1 ...     (set memory array to a given sequence of values)
