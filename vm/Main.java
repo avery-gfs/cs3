@@ -3,7 +3,7 @@ import java.nio.file.*;
 
 class Main {
     public static void main(String[] args) throws Exception {
-        new VM().run("factorial/solution.txt");
+        new VM().run("insertion-sort/solution.txt");
     }
 }
 
@@ -150,7 +150,7 @@ class VM {
                 ip++;
                 return;
             case "store":
-                memory[args[1]] = args[0];
+                memory[args[0]] = args[1];
                 lastMem = args[0];
                 ip++;
                 return;
