@@ -1,3 +1,5 @@
+TO DO: use functions for instructions not DSL
+
 All registers begin program execution initialized to 0.
 
 Instructions with a dest parameter store their result in the register dest. These instructions require that dest is a register name. All other arguments can be register names or number literals.
@@ -52,5 +54,5 @@ print n    (print n as a character in the current line)
 MEMORY:
 
 load dest index    (load memory location index into dest)
-store src index    (store src in memory location index)
+store index src    (store src in memory location index)
 init n0 n1 ...     (set memory array to a given sequence of values)
