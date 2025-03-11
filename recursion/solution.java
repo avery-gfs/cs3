@@ -21,10 +21,18 @@ class Main {
 
   // https://en.wikipedia.org/wiki/Fibonacci_sequence
   static int fibonacci(int n) {
-    return 0;
+    if (n < 2) {
+      return n;
+    }
+
+    return fibonacci(n - 1) + fibonacci(n - 2);
   }
 
   static int sum(int index, List<Integer> nums) {
-    return 0;
+    if (index == nums.size()) {
+      return 0;
+    }
+
+    return nums.get(index) + sum(index + 1, nums);
   }
 }
