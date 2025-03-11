@@ -4,6 +4,9 @@ import java.util.*;
 // a wall, find a path from A to B and mark the path with ▒ characters.
 
 class Main {
+  // A 2D array of chars to represent maze
+  static char[][] board;
+
   public static void main(String[] args) {
     var maze = """
     █████████████████████████████████
@@ -29,8 +32,7 @@ class Main {
     // (ignore blank lines at start and end)
     var lines = maze.trim().split("\n");
 
-    // Make a 2D array of chars to represent maze
-    var board = new char[lines.length][];
+    board = new char[lines.length][];
     var index = 0;
 
     for (var line : lines) {
@@ -40,13 +42,11 @@ class Main {
 
     // Assume we know that the start A character is always at row 1 column 1.
     // Run the search from this starting position.
-    search(board, 1, 1);
+    search(1, 1);
   }
 
-  // The search method takes three parameters:
-  //
-  // - The board object
-  // - The row and column of the current search location
+  // The search method takes two parameters: the row and column of
+  // the current search location
   //
   // The search method returns true if we find a path to B
   // that goes through the point (r, c) and false otherwise.
@@ -62,7 +62,7 @@ class Main {
   // Make sure that search doesn't do extra work and keep searching
   // after a valid path is found.
 
-  public static boolean search(char[][] board, int r, int c) {
+  public static boolean search(int r, int c) {
     // Add 20ms delay to visualize search process in action
     try { Thread.sleep(20); } catch (InterruptedException err) {}
 
