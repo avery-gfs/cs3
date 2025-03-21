@@ -38,7 +38,7 @@ class Main {
     }
 
     // Take an array of words and make a HashMap of scores for each word,
-    // utilizing the calcScores method.
+    // utilizing the calcScore method.
     // 
     // For example:
     //
@@ -46,7 +46,7 @@ class Main {
     //
     // should return
     //
-    //   {problem=13, body=10, three=8}
+    //   new HashMap<>(Map.of("problem", 13, "body", 10, "three", 8))
 
     static HashMap<String, Integer> calcScores(String[] words) {
         return null;
