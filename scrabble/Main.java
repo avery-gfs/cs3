@@ -16,8 +16,9 @@ class Main {
 
     public static void main(String[] args) throws Exception {
         var words = Files.readString(Path.of("alice.txt")).split(" ");
+        System.out.println(calcScore("alice")); // Should print 7
+
         var bestWord = getBest(words);
-        
         System.out.println(bestWord);
         System.out.println(calcScore(bestWord));
     }
