@@ -38,7 +38,6 @@ class Main {
     }
 
     // Given an array of words, find the word with the highest scrabble score.
-    // You may assume that the words array is non-empty.
     //
     // For example:
     //
