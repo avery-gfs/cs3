@@ -27,11 +27,11 @@ class Main {
     // 
     // For example:
     //
-    //   calcScore("problem")
+    //   calcScore("alice")
     //
     // should return
     //
-    //   13
+    //   7
 
     static Integer calcScore(String word) {
         return 0;
