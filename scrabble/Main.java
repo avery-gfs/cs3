@@ -16,11 +16,10 @@ class Main {
 
     public static void main(String[] args) throws Exception {
         var words = Files.readString(Path.of("alice.txt")).split(" ");
-        var scores = calcScores(words);
-        var bestWord = getBest(words, scores);
+        var bestWord = getBest(words);
         
         System.out.println(bestWord);
-        System.out.println(scores.get(bestWord));
+        System.out.println(calcScore(bestWord));
     }
 
     // Calculate the scrabble score for a given word.
@@ -37,38 +36,18 @@ class Main {
         return 0;
     }
 
-    // Take an array of words and make a HashMap of scores for each word,
-    // utilizing the calcScore method.
-    // 
-    // For example:
-    //
-    //   calcScores(new String[] { "three", "body", "problem" })
-    //
-    // should return
-    //
-    //   new HashMap<>(Map.of("problem", 13, "body", 10, "three", 8))
-
-    static HashMap<String, Integer> calcScores(String[] words) {
-        return null;
-    }
-
-    // Given an array of words and a HashMap of scores, find the word
-    // in words with the highest scrabble score. You may assume that
-    // the words array is non-empty and that every word in the array has
-    // a score entry in scores.
+    // Given an array of words, find the word with the highest scrabble score.
+    // You may assume that the words array is non-empty.
     //
     // For example:
     //
-    //   getBest(
-    //     new String[] { "three", "body", "problem" },
-    //     new HashMap<>(Map.of("problem", 13, "body", 10, "three", 8))
-    //   )
+    //   getBest(new String[] { "three", "body", "problem" })
     // 
     // should return
     //
     //   "problem"
 
-    static String getBest(String[] words, HashMap<String, Integer> scores) {
+    static String getBest(String[] words) {
         return null;
     }
 }
