@@ -1,7 +1,7 @@
 // Tim is a hipster.
 // Tim will only watch movies that aren't new or aren't famous.
 //
-// Will Tim watch?
+// What will Tim watch?
 //
 //              new   not new
 //            ┌─────┬─────────┐
@@ -19,7 +19,7 @@ boolean willTimWatch(boolean isNew, boolean isFamous) {
 // Daniel likes fun movies.
 // Daniel will only watch movies that aren't sad and aren't long.
 //
-// Will Daniel watch?
+// What will Daniel watch?
 //
 //            sad   not sad
 //          ┌─────┬─────────┐
