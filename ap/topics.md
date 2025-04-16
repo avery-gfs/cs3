@@ -26,6 +26,8 @@ Textbook: https://runestone.academy/ns/books/published/csawesome/index.html
 
 ### 4. Iteration (Loops)
 
+- [4.5. Loop Analysis](https://runestone.academy/ns/books/published/csawesome/Unit4-Iteration/topic-4-5-loop-analysis.html)
+
 - [4.6. Unit 4 Summary](https://runestone.academy/ns/books/published/csawesome/Unit4-Iteration/topic-4-6-summary.html)
 
 ### 5. Writing Classes
