@@ -66,7 +66,7 @@ Textbook: https://runestone.academy/ns/books/published/csawesome/index.html
 
 - [7.5. Searching Algorithms](https://runestone.academy/ns/books/published/csawesome/Unit7-ArrayList/topic-7-5-searching.html)
 
-- [7.6. Sorting Algorithms](https://runestone.academy/ns/books/published/csawesome/Unit7-ArrayList/topic-7-5-searching.html)
+- [7.6. Sorting Algorithms](https://runestone.academy/ns/books/published/csawesome/Unit7-ArrayList/topic-7-6-sorting.html)
 
 ### 8. 2D Arrays
 
