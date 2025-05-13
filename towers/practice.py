@@ -11,8 +11,8 @@ def showRow(radius, sym):
 def showRows(tower):
   numBlanks = height - len(tower) + 1
   blanks = [showRow(0, "░")] * numBlanks
-  rows = [showRow(row, "▇") for row in reversed(tower)]
-  return blanks + rows
+  discs = [showRow(row, "▇") for row in reversed(tower)]
+  return blanks + discs
 
 def showTowers():
   combined = [" "] * (height + 1)
