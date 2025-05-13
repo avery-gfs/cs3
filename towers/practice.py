@@ -15,14 +15,13 @@ def showRows(tower):
   return blanks + rows
 
 def showTowers():
-  sep = " " * (height + 1)
-  combined = list(sep)
+  combined = [" "] * (height + 1)
 
   for tower in towers:
     rows = showRows(tower)
 
     for (index, row) in enumerate(rows):
-      combined[index] += row + sep[index]
+      combined[index] += row + " "
 
   os.system("clear")
 
