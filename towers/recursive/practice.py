@@ -30,6 +30,8 @@ def showTowers():
 
 	time.sleep(0.2)
 
+# https://en.wikipedia.org/wiki/Tower_of_Hanoi#Recursive_solution
+
 def moveSingle(src, dest):
 	towers[dest].append(towers[src][-1])
 	towers[src].pop()

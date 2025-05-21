@@ -30,21 +30,22 @@ def showTowers():
 
 	time.sleep(0.2)
 
-# https://en.wikipedia.org/wiki/Tower_of_Hanoi#Recursive_solution
-
 def moveSingle(src, dest):
 	towers[dest].append(towers[src][-1])
 	towers[src].pop()
 	showTowers()
 
-def solve(src, dest, depth):
-	if depth:
-		tmp = 3 - src - dest
-		solve(src, tmp, depth - 1)
-		moveSingle(src, dest)
-		solve(tmp, dest, depth - 1)
+# https://en.wikipedia.org/wiki/Tower_of_Hanoi#Iterative_solution
+
+def canMove(src, dest):
+	pass # Your code goes here!
+
+def step(n):
+	pass # Your code goes here!
 
 tower = list(reversed(range(1, height + 1)))
 towers = [tower, [], []]
 showTowers()
-solve(0, 2, height)
+
+for n in range(63):
+	step(n)
