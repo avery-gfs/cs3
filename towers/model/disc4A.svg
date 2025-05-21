@@ -1,0 +1,40 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="-27 -27 54 54"
+  width="54mm"
+  height="54mm"
+>
+  <g stroke-width="0.1" stroke="black" fill="none">
+    <circle cx="0" cy="0" r="27" />
+
+    <circle cx="0" cy="0" r="5" />
+
+    <rect
+      y="-16"
+      transform="translate(-5, -1.45)"
+      width="10"
+      height="2.9"
+    />
+
+    <rect
+      y="16"
+      transform="translate(-5, -1.45)"
+      width="10"
+      height="2.9"
+    />
+
+    <rect
+      x="-16"
+      transform="translate(-1.45, -5)"
+      width="2.9"
+      height="10"
+    />
+
+    <rect
+      x="16"
+      transform="translate(-1.45, -5)"
+      width="2.9"
+      height="10"
+    />
+  </g>
+</svg>
