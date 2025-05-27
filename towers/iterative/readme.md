@@ -1,3 +1,5 @@
+Wikipedia description: https://en.wikipedia.org/wiki/Tower_of_Hanoi#Iterative_solution
+
 `height`: Number of disks in the puzzle. Each disk is represented with a number from `1` to `height`, where the `1` disk is the smallest.
 
 `towers`: List of towers. Towers are accessed with their index (`0`, `1`, or `2`) in the towers list. Each tower is a list of numbers representing the disks in the tower from bottom to top, for example in the following configuration:
